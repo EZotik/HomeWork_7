@@ -1,12 +1,9 @@
 package tets;
 
 import org.junit.jupiter.api.Test;
-import pages.RegistrationPage;
+
 import pages.TextBoxPage;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
 
 public class TextBoxTest extends TestBase {
     TextBoxPage textBoxPage = new TextBoxPage();

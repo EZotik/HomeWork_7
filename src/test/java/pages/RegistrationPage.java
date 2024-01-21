@@ -1,19 +1,17 @@
 package pages;
 
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.Keys;
 import pages.components.CalendarComponent;
 import pages.components.ResultComponent;
 
-import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.executeJavaScript;
 
 public class RegistrationPage {
-    private SelenideElement firstNameInput = $("#firstName"),
+    private final SelenideElement firstNameInput = $("#firstName"),
                             lastNameInput = $("#lastName"),
                             userEmailInput = $("#userEmail"),
                             genderWrapper =  $("#genterWrapper"),
@@ -85,7 +83,7 @@ public class RegistrationPage {
 
     public RegistrationPage setStateAndCity(String value1, String value2){
         stateInput.setValue(value1).sendKeys(Keys.ENTER);
-        cityInput.setValue(value1).sendKeys(Keys.ENTER);
+        cityInput.setValue(value2).sendKeys(Keys.ENTER);
         return this;
     }
 
