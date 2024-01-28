@@ -9,7 +9,7 @@ import java.util.Locale;
 
 public class RandomUtils {
 
-    static Faker faker = new Faker(Locale.ITALY);
+    static Faker faker = new Faker(Locale.ENGLISH);
     SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMMM,yyyy");
     SimpleDateFormat monthFormat = new SimpleDateFormat("MMMM");
     SimpleDateFormat dayFormat = new SimpleDateFormat("dd");
