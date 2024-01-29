@@ -32,7 +32,7 @@ public class TestRegistrationWithRandomUtils extends TestBase {
                 .setUserNumber(random.phoneNumber)
                 .setDateOfBirth(random.dayOfBirth, random.monthOfBirth, random.yearOfBirth)
                 .setSubjects(random.subject)
-                .setHobbies(random.hobby).setHobbies(random.hobby)
+                .setHobbies(random.hobby)
                 .setPicture(file)
                 .setUserAddress(random.address)
                 .setStateAndCity(random.state, random.city)
@@ -41,9 +41,9 @@ public class TestRegistrationWithRandomUtils extends TestBase {
                 .checkResult(fieldEmail, random.email)
                 .checkResult(fieldGender, random.gender)
                 .checkResult(fieldMobile, random.phoneNumber)
-                .checkResult(fieldBirthday, random.fullBirthDate)
+                .checkResult(fieldBirthday, random.dayOfBirth + " " + random.monthOfBirth + "," + random.yearOfBirth)
                 .checkResult(fieldSubjects, random.subject)
-                .checkResult(fieldHobbies, random.hobby + "," + random.hobby)
+                .checkResult(fieldHobbies, random.hobby)
                 .checkResult(fieldPicture, file)
                 .checkResult(fieldАddress, random.address)
                 .checkResult(fieldStateCity, random.state + " " + random.city);
@@ -58,15 +58,14 @@ public class TestRegistrationWithRandomUtils extends TestBase {
                 .setGender(random.gender)
                 .setUserNumber(random.phoneNumber)
                 .setDateOfBirth(random.dayOfBirth, random.monthOfBirth, random.yearOfBirth)
-                .setUserAddress(random.subject)
+                .setUserAddress(random.address)
                 .submit()
                 .checkResult(fieldName, random.firstName + " " + random.lastName)
                 .checkResult(fieldEmail, random.email)
                 .checkResult(fieldGender, random.gender)
                 .checkResult(fieldMobile, random.phoneNumber)
-                .checkResult(fieldBirthday, random.fullBirthDate)
+                .checkResult(fieldBirthday, random.dayOfBirth + " " + random.monthOfBirth + "," + random.yearOfBirth)
                 .checkResult(fieldАddress, random.address);
-
     }
 
     @Test
@@ -80,6 +79,4 @@ public class TestRegistrationWithRandomUtils extends TestBase {
                 .submit()
                 .checkoutWindow();
     }
-
-
 }

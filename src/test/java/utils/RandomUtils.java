@@ -9,10 +9,10 @@ import java.util.Locale;
 
 public class RandomUtils {
 
-    static Faker faker = new Faker(Locale.ENGLISH);
-    SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMMM,yyyy");
-    SimpleDateFormat monthFormat = new SimpleDateFormat("MMMM");
-    SimpleDateFormat dayFormat = new SimpleDateFormat("dd");
+    public Faker faker = new Faker();
+    SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMMM,yyyy", Locale.ENGLISH);
+    SimpleDateFormat monthFormat = new SimpleDateFormat("MMMM", Locale.ENGLISH);
+    SimpleDateFormat dayFormat = new SimpleDateFormat("dd", Locale.ENGLISH);
     Date birthday = faker.date().birthday();
 
     public String firstName = faker.name().firstName();
@@ -26,7 +26,7 @@ public class RandomUtils {
     public String email = faker.internet().emailAddress(firstName.toLowerCase() + yearOfBirth);
     public String subject = getSubject();
     public String hobby = getHobby();
-    public String address = faker.chuckNorris().fact();
+    public String address = faker.address().fullAddress();
     public String city = getCity();
     public String state = getStateByCity(city);
 
