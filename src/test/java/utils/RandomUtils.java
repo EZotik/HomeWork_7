@@ -19,7 +19,6 @@ public class RandomUtils {
     public String lastName = faker.elderScrolls().lastName();
     public String gender = getGender();
     public String phoneNumber = faker.phoneNumber().subscriberNumber(10);
-    public String fullBirthDate = dateFormat.format(birthday);
     public String dayOfBirth = dayFormat.format(birthday);
     public String monthOfBirth = monthFormat.format(birthday);
     public String yearOfBirth = String.valueOf(birthday.getYear() + 1900);
