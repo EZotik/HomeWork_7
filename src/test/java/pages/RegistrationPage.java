@@ -29,6 +29,10 @@ public class RegistrationPage {
     ResultComponent resultComponent = new ResultComponent();
     public RegistrationPage openPage(){
         open("/automation-practice-form");
+        SelenideElement bannerRoot = $(".fc-consent-root");
+        if (bannerRoot.isDisplayed()) {
+            bannerRoot.$(byText("Consent")).click();
+        }
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
         return this;
