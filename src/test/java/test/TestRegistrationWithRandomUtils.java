@@ -1,4 +1,4 @@
-package tets;
+package test;
 
 import io.qameta.allure.Feature;
 import org.junit.jupiter.api.DisplayName;
