@@ -20,12 +20,21 @@ public class TestBase {
 
     @BeforeAll
     static void beforeAll() {
-        Configuration.browserSize = "1920x1080";
+        String browser = System.getProperty("browser", "chrome");
+        String browserVersion = System.getProperty("browser_version", "100.0");
+        String browserSize = System.getProperty("browser_size", "1920x1080");
+        String remoteUrl = System.getProperty("remoteUrl", "https://user1:1111@selenoid.autotests.cloud/wd/hub");
+        String browserConfig = String.format("Browser: %s, version: %s, window size: %s, remoteUrl: %s",
+                browser, browserVersion, browserSize, remoteUrl);
+        System.out.println(browserConfig);
+        Configuration.browser = browser;
+        Configuration.browserVersion = browserVersion;
+        Configuration.browserSize = browserSize;
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "normal";
         Configuration.holdBrowserOpen = false;
         SelenideLogger.addListener("allure", new AllureSelenide());
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        Configuration.remote = remoteUrl;
     }
 
     @AfterEach
