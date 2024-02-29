@@ -55,3 +55,9 @@ tasks.withType(Test) {
             includeTags("practiceform")
         }
     }
+
+    task simple_test(type: Test) {
+        useJUnitPlatform {
+           includeTags("simple")
+    }
+}

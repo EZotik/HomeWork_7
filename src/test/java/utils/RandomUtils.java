@@ -1,7 +1,6 @@
 package utils;
 
 import com.github.javafaker.Faker;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -14,7 +13,6 @@ public class RandomUtils {
     SimpleDateFormat monthFormat = new SimpleDateFormat("MMMM", Locale.ENGLISH);
     SimpleDateFormat dayFormat = new SimpleDateFormat("dd", Locale.ENGLISH);
     Date birthday = faker.date().birthday();
-
     public String firstName = faker.name().firstName();
     public String lastName = faker.elderScrolls().lastName();
     public String gender = getGender();
