@@ -5,7 +5,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
-import pages.RegistrationTest;
 import utils.RandomUtils;
 import static io.qameta.allure.Allure.step;
 
@@ -14,7 +13,6 @@ import static io.qameta.allure.Allure.step;
 public class TestRegistrationWithRandomUtils extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
-    RegistrationTest registrationTest = new RegistrationTest();
     RandomUtils random = new RandomUtils();
     String file = "AH2I0605.jpg";
     String fieldName = "Student Name";
