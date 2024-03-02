@@ -35,6 +35,7 @@ public class TestRegistrationWithProperties extends TestBase {
         System.setProperty("env", "test");
         projectConfig = ConfigFactory.create(RegistrationConfig.class);
     }
+
     @Test
     @Feature("Форма Practice Form")
     @DisplayName("Заполнение формы Practice Form с использованием First Name и Last Name из properties")
@@ -43,10 +44,10 @@ public class TestRegistrationWithProperties extends TestBase {
             registrationPage.openPage();
         });
         step("Указываем First Name", () -> {
-            registrationPage.setFirstName(registrationConfig.firstName());
+            registrationPage.setFirstName(projectConfig.firstName());
         });
         step("Указываем Last Name", () -> {
-            registrationPage.setLastName(registrationConfig.lastName());
+            registrationPage.setLastName(projectConfig.lastName());
         });
         step("Указываем Email", () -> {
             registrationPage.setEmail(random.email);
