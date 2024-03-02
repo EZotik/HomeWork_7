@@ -3,6 +3,7 @@ package test;
 import config.RegistrationConfig;
 import io.qameta.allure.Feature;
 import org.aeonbits.owner.ConfigFactory;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -16,6 +17,7 @@ public class TestRegistrationWithProperties extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
     RegistrationConfig registrationConfig = ConfigFactory.create(RegistrationConfig.class);
+    RegistrationConfig projectConfig;
     RandomUtils random = new RandomUtils();
     String file = "AH2I0605.jpg";
     String fieldName = "Student Name";
@@ -28,7 +30,11 @@ public class TestRegistrationWithProperties extends TestBase {
     String fieldPicture = "Picture";
     String fieldАddress = "Address";
     String fieldStateCity = "State and City";
-
+    @BeforeEach
+    void setConfig(){
+        System.setProperty("env", "test");
+        projectConfig = ConfigFactory.create(RegistrationConfig.class);
+    }
     @Test
     @Feature("Форма Practice Form")
     @DisplayName("Заполнение формы Practice Form с использованием First Name и Last Name из properties")
