@@ -5,9 +5,7 @@ import org.aeonbits.owner.Config;
 
 public interface RegistrationConfig extends Config {
     @Key("first_name")
-    @DefaultValue("defaultFirstName")
     String firstName();
     @Key("last_name")
-    @DefaultValue("defaultLastName")
     String lastName();
 }

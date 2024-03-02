@@ -16,8 +16,7 @@ import static io.qameta.allure.Allure.step;
 public class TestRegistrationWithProperties extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
-    RegistrationConfig registrationConfig = ConfigFactory.create(RegistrationConfig.class);
-    RegistrationConfig projectConfig;
+    RegistrationConfig registrationConfig;
     RandomUtils random = new RandomUtils();
     String file = "AH2I0605.jpg";
     String fieldName = "Student Name";
@@ -30,12 +29,12 @@ public class TestRegistrationWithProperties extends TestBase {
     String fieldPicture = "Picture";
     String fieldАddress = "Address";
     String fieldStateCity = "State and City";
+
     @BeforeEach
     void setConfig(){
         System.setProperty("env", "test");
-        projectConfig = ConfigFactory.create(RegistrationConfig.class);
+        registrationConfig = ConfigFactory.create(RegistrationConfig.class);
     }
-
     @Test
     @Feature("Форма Practice Form")
     @DisplayName("Заполнение формы Practice Form с использованием First Name и Last Name из properties")
@@ -44,10 +43,10 @@ public class TestRegistrationWithProperties extends TestBase {
             registrationPage.openPage();
         });
         step("Указываем First Name", () -> {
-            registrationPage.setFirstName(projectConfig.firstName());
+            registrationPage.setFirstName(registrationConfig.firstName());
         });
         step("Указываем Last Name", () -> {
-            registrationPage.setLastName(projectConfig.lastName());
+            registrationPage.setLastName(registrationConfig.lastName());
         });
         step("Указываем Email", () -> {
             registrationPage.setEmail(random.email);
