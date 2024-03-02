@@ -10,6 +10,6 @@ public interface RegistrationConfig extends Config {
     @DefaultValue("defaultFirstName")
     String firstName();
     @Key("last_name")
-    @DisplayName("defaultLastName")
+    @DefaultValue("defaultLastName")
     String lastName();
 }

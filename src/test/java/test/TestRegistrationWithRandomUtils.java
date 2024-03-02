@@ -83,7 +83,6 @@ public class TestRegistrationWithRandomUtils extends TestBase {
                     .checkResult(fieldStateCity, random.state + " " + random.city);
         });
     }
-
     @Test
     @Feature("Форма Practice Form")
     @DisplayName("Заполнение формы Practice Form без полей Subjects, Hobbies, Picture, State and City")

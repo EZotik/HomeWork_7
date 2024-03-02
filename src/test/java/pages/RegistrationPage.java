@@ -1,6 +1,8 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
+import config.RegistrationConfig;
+import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.Keys;
 import pages.components.CalendarComponent;
 import pages.components.ResultComponent;
@@ -27,6 +29,8 @@ public class RegistrationPage {
                             checkWindow = $(".modal-content");
     CalendarComponent calendarComponent = new CalendarComponent();
     ResultComponent resultComponent = new ResultComponent();
+    RegistrationConfig registrationConfig = ConfigFactory.create(RegistrationConfig.class);
+    
     public RegistrationPage openPage(){
         open("/automation-practice-form");
         SelenideElement bannerRoot = $(".fc-consent-root");
