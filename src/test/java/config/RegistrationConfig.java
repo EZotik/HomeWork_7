@@ -1,7 +1,7 @@
 package config;
 
 import org.aeonbits.owner.Config;
-@Config.Sources("classpath:config/${env}.properties")
+@Config.Sources("classpath:config/${environment}.properties")
 
 public interface RegistrationConfig extends Config {
     @Key("first_name")

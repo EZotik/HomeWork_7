@@ -32,7 +32,7 @@ public class TestRegistrationWithProperties extends TestBase {
 
     @BeforeEach
     void setConfig(){
-        System.setProperty("env", "test");
+        System.setProperty("environment", System.getProperty("environment", "stage"));
         registrationConfig = ConfigFactory.create(RegistrationConfig.class);
     }
     @Test
