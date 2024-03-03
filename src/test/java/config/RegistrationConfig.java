@@ -1,14 +1,11 @@
 package config;
 
 import org.aeonbits.owner.Config;
-@Config.LoadPolicy(Config.LoadType.MERGE)
-@Config.Sources({
-        "system:properties",
-        "classpath:config/${environment}.properties"})
-
+@Config.Sources({"classpath:config/${environment}.properties"})
 public interface RegistrationConfig extends Config {
-    @Key("first_name")
+    @Key("first.name")
     String firstName();
-    @Key("last_name")
+    @Key("last.name")
     String lastName();
+
 }
