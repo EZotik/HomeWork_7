@@ -32,7 +32,7 @@ public class TestRegistrationWithProperties extends TestBase {
     @Feature("Форма Practice Form")
     @DisplayName("Заполнение формы Practice Form с использованием First Name и Last Name из properties")
     void fillFormRegistrationTest() {
-        System.setProperty("environment", System.getProperty("environment", "stage"));
+
         RegistrationConfig registrationConfig = ConfigFactory.create(RegistrationConfig.class);
 
         step("Открываем главную страницу", () -> {
